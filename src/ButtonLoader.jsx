@@ -16,7 +16,7 @@ const propTypes = {
 function ButtonLoader({
   bsStyle   = 'default',
   children  = null,
-  disabled  = false,
+  disabled,
   icon      = null,
   loading   = false,
   spinColor = '#fff',
@@ -31,7 +31,7 @@ function ButtonLoader({
     return icon;
   }
 
-  const buttonDisabled = disabled || loading;
+  const buttonDisabled = typeof disabled === 'boolean' ? disabled : loading;
 
   return <Button bsStyle={bsStyle} disabled={buttonDisabled} {...rest}>{renderIcon()} {children}</Button>;
 }

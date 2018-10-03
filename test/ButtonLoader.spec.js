@@ -29,10 +29,10 @@ describe('loading and disabled. If loading then button is disabled, disabled pro
     expect(component.find('button')).to.be.disabled();
   });
 
-  it('loading: true, disabled: any => disabled', () => {
+  it('loading: true, disabled: false => not disabled', () => {
     const component = render(<ButtonLoader loading disabled={false}>Press me!</ButtonLoader>);
 
-    expect(component.find('button')).to.be.disabled();
+    expect(component.find('button')).to.be.not.disabled();
   });
 });
 
